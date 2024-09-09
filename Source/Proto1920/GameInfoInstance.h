@@ -37,13 +37,13 @@ public:
 	virtual void Init();
 
 	UFUNCTION(BlueprintCallable, Category = "ServerSettings")
-	void HostSession(int32 PublicConnections, bool UseLAN, bool UseLobbiesifAvailable, FString ServerName);
+	void MyHostSession(int32 PublicConnections, bool UseLAN, bool UseLobbiesifAvailable, FString ServerName);
 
 	UFUNCTION(BlueprintCallable, Category = "SessionInteraciton")
-	void FindSession(bool UseLAN);
+	void MyFindSession(bool UseLAN);
 
 	UFUNCTION(BlueprintCallable, Category = "SessionInteraciton")
-	void JoinSession(int32 Index);
+	void MyJoinSession(int32 Index);
 
 	UFUNCTION(BlueprintImplementableEvent, Category = "SessionInteraction")
 	void OnSessionsFound(const TArray<FServerData>& SessionInfos);

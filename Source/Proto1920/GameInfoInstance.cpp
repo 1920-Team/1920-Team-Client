@@ -34,7 +34,7 @@ void UGameInfoInstance::Init()
 	}
 }
 
-void UGameInfoInstance::HostSession(int32 inPublicConnections, bool inUseLAN, bool inUseLobbiesifAvailable, FString inServerName)
+void UGameInfoInstance::MyHostSession(int32 inPublicConnections, bool inUseLAN, bool inUseLobbiesifAvailable, FString inServerName)
 {
 	PublicConnections = inPublicConnections;
 	UseLAN = inUseLAN;
@@ -101,7 +101,7 @@ void UGameInfoInstance::OnDestroySessionComplete(FName SessionName, bool Success
 	}
 }
 
-void UGameInfoInstance::FindSession(bool inUseLAN)
+void UGameInfoInstance::MyFindSession(bool inUseLAN)
 {
 	SessionSearch = MakeShareable(new FOnlineSessionSearch());
 	if (SessionSearch.IsValid())
@@ -147,7 +147,7 @@ void UGameInfoInstance::OnFindSessionsComplete(bool Success)
 	}
 }
 
-void UGameInfoInstance::JoinSession(int32 inIndex)
+void UGameInfoInstance::MyJoinSession(int32 inIndex)
 {
 	if (!SessionInterface.IsValid()) return;
 	if (!SessionSearch.IsValid()) return;
